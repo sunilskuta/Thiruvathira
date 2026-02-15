@@ -1,544 +1,628 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    let titleText = "🪔 SNDP Kadakkal Union.  🙏 Welcome!    ";
-    let displayLength = titleText.length; 
-    let index = 0;
-
-    setInterval(() => {
-      document.title = titleText.slice(index) + titleText.slice(0, index);
-      index = (index + 1) % displayLength;
-    }, 150);
-  });
-</script>
-
-  <meta name="description" content="SNDP Yogam - Kadakkal Union | Community, Culture, Service" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+Malayalam:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { 
-      --primary: #f59e0b;
-      --primary-dark: #d97706;
-      --primary-light: #fbbf24;
-      --accent: #92400e;
-      --bg-warm: #fffbeb;
-      --bg-cream: #fef3c7;
-    }
-    body { 
-      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial; 
-    }
-    body[lang="ml"], body[lang="ml"] * {
-      font-family: 'Noto Sans Malayalam', 'Inter', system-ui, sans-serif;
-    }
-    .hero-bg { 
-      background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(217,119,6,0.05), rgba(251,191,36,0.08)); 
-    }
-    .lang-toggle {
-      transition: all 0.3s ease;
-    }
-    .floating {
-      animation: floating 3s ease-in-out infinite;
-    }
-    @keyframes floating {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪔കടക്കല്‍ തിരുവാതിര ♫⋆｡♪ ₊˚♬ ﾟ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'festival': {
+                            gold: '#FFD700',
+                            deepred: '#8B0000',
+                            orange: '#FF6B35',
+                            cream: '#FFF8E7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Gradient background with animation */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Floating animation for decorative elements */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Fade in up animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Staggered animation delays */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        
+        /* Pulse glow effect */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        /* Shimmer effect */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            background-size: 1000px 100%;
+            animation: shimmer 3s infinite;
+        }
+        
+        /* Image hover effect */
+        .image-container img {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Button hover effects */
+        .btn-hover {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-hover:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Small button pulse */
+        @keyframes smallPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .small-btn-pulse:hover {
+            animation: smallPulse 0.5s ease;
+        }
+        
+        /* Tooltip with slide in - centered above button */
+        .tooltip-container {
+            position: relative;
+        }
+        
+        .tooltip-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        
+        .tooltip-container:hover .tooltip-text {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-8px);
+        }
+        
+        /* Mobile: Show tooltips on right side instead of above */
+        @media (max-width: 640px) {
+            .tooltip-text {
+                bottom: auto;
+                left: 100%;
+                top: 50%;
+                transform: translateY(-50%) translateX(-10px);
+                margin-left: 8px;
+            }
+            
+            .tooltip-container:hover .tooltip-text {
+                transform: translateY(-50%) translateX(8px);
+            }
+            
+            .tooltip-arrow {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) translateX(-100%);
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                border-right: 8px solid rgba(99, 102, 241, 0.95);
+                border-left: none;
+            }
+        }
+        
+        /* Beautiful tooltip styling */
+        .tooltip-beautiful {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(139, 92, 246, 0.95));
+            backdrop-filter: blur(10px);
+            padding: 10px 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+            font-size: 13px;
+            font-weight: 500;
+            color: white;
+            letter-spacing: 0.3px;
+        }
+        
+        /* Mobile: Smaller tooltip text */
+        @media (max-width: 640px) {
+            .tooltip-beautiful {
+                padding: 6px 10px;
+                font-size: 11px;
+                max-width: 150px;
+                white-space: normal;
+            }
+        }
+        
+        /* Tooltip arrow */
+        .tooltip-arrow {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid rgba(99, 102, 241, 0.95);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        /* Overlay fade in */
+        .overlay-enter {
+            animation: overlayFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes overlayFadeIn {
+            from {
+                opacity: 0;
+                backdrop-filter: blur(0px);
+            }
+            to {
+                opacity: 1;
+                backdrop-filter: blur(8px);
+            }
+        }
+        
+        .image-zoom-in {
+            animation: imageZoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        @keyframes imageZoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        /* Mobile: Hide decorative circles to reduce clutter */
+        @media (max-width: 640px) {
+            .decorative-circle {
+                display: none;
+            }
+        }
+        
+        /* Red highlight for button 8 */
+        .btn-special {
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+        
+        .btn-special:hover {
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.7);
+        }
+        
+        .small-btn-special {
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
+        }
+        
+        /* Mobile: Smaller buttons and adjusted spacing */
+        @media (max-width: 640px) {
+            .image-button-mobile {
+                padding: 6px 10px;
+                font-size: 12px;
+                min-width: 2.5rem;
+            }
+            
+            .small-button-mobile {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Utsav Notice Button - Special floating button */
+        .utsav-notice-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            animation: gentleBounce 2s ease-in-out infinite;
+        }
+        
+        /* Mobile: Smaller Utsav Notice button and positioned higher */
+        @media (max-width: 640px) {
+            .utsav-notice-btn {
+                bottom: 20px;
+                padding: 12px 20px !important;
+                font-size: 14px;
+            }
+            
+            .utsav-notice-btn span {
+                font-size: 16px !important;
+            }
+            
+            .utsav-notice-btn .emoji {
+                font-size: 20px;
+            }
+        }
+        
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        
+        .utsav-notice-btn:hover {
+            animation: none;
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.5);
+        }
+        
+        /* Ebook modal styles */
+        .ebook-modal {
+            animation: modalFadeIn 0.4s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .ebook-iframe {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Mobile: Full screen ebook with minimal padding */
+        @media (max-width: 640px) {
+            .ebook-modal-container {
+                width: 100%;
+                height: 100vh;
+                max-width: 100%;
+            }
+            
+            .ebook-header {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+            
+            .ebook-title {
+                font-size: 18px;
+                text-align: center;
+            }
+            
+            .ebook-iframe {
+                border-radius: 8px;
+            }
+        }
+        
+        /* Mobile: Adjust header padding and title */
+        @media (max-width: 640px) {
+            .page-header {
+                padding: 1rem !important;
+            }
+            
+            .page-title {
+                font-size: 1.5rem !important;
+            }
+            
+            .page-subtitle {
+                font-size: 0.875rem !important;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 text-gray-800 leading-relaxed">
-  <!-- Navigation -->
-  <header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-40 border-b-2 border-amber-200">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 via-yellow-400 to-orange-400 flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 ring-2 ring-amber-300">
-          <img 
-            src="https://admin.sivagiri.com/uploads/photos/1657866201_5024ea3be894fef092cd.jpg" 
-            alt="Guru" 
-            class="w-full h-full object-cover rounded-full"
-          >
-        </div>
-
-        <div>
-          <h1 class="text-base sm:text-lg font-bold gradient-text" data-en="SNDP Kadakkal Union" data-ml="എസ്.എൻ.ഡി.പി കടക്കൽ യൂണിയൻ">SNDP Kadakkal Union</h1>
-          <p class="text-xs text-amber-700 hidden md:block" data-en="Sree Narayana Dharma Paripalana Yogam" data-ml="ശ്രീ നാരായണ ധർമ്മ പരിപാലന യോഗം">Sree Narayana Dharma Paripalana Yogam</p>
-        </div>
-      </a>
-
-      <div class="flex items-center gap-4">
-<button id="langToggle" class="lang-toggle px-4 py-2 md:px-4 md:py-2 sm:px-3 sm:py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 text-amber-900 font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-  <span class="flex items-center gap-2 sm:gap-1.5">
-    <svg class="w-4 h-4 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-    </svg>
-    മലയാളം
-  </span>
-</button>
-
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="#about" class="hover:text-amber-600 transition-colors" data-en="About" data-ml="ഞങ്ങളെക്കുറിച്ച്">About</a>
-          <a href="#events" class="hover:text-amber-600 transition-colors" data-en="Events" data-ml="പരിപാടികൾ">Events</a>
-          <a href="#gallery" class="hover:text-amber-600 transition-colors" data-en="Gallery" data-ml="ഗാലറി">Gallery</a>
-          <a href="#membership" class="hover:text-amber-600 transition-colors" data-en="Membership" data-ml="അംഗത്വം">Membership</a>
-          <a href="#contact" class="hover:text-amber-600 transition-colors" data-en="Contact" data-ml="ബന്ധപ്പെടുക">Contact</a>
-        </nav>
-
-        <div class="md:hidden">
-          <button id="menuBtn" class="p-2 rounded-md border-2 border-amber-300 shadow-sm bg-white hover:bg-amber-50 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-gradient-to-br from-amber-50 to-yellow-50 border-t-2 border-amber-200">
-      <div class="px-6 py-4 flex flex-col gap-3">
-        <a href="#about" class="py-2 hover:text-amber-600 transition-colors font-medium" data-en="About" data-ml="ഞങ്ങളെക്കുറിച്ച്">About</a>
-        <a href="#events" class="py-2 hover:text-amber-600 transition-colors font-medium" data-en="Events" data-ml="പരിപാടികൾ">Events</a>
-        <a href="#gallery" class="py-2 hover:text-amber-600 transition-colors font-medium" data-en="Gallery" data-ml="ഗാലറി">Gallery</a>
-        <a href="#membership" class="py-2 hover:text-amber-600 transition-colors font-medium" data-en="Membership" data-ml="അംഗത്വം">Membership</a>
-        <a href="#contact" class="py-2 hover:text-amber-600 transition-colors font-medium" data-en="Contact" data-ml="ബന്ധപ്പെടുക">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main class="container mx-auto px-6 py-10">
-    <section class="hero-bg rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-2xl border border-amber-200">
-      <div class="flex-1">
-        <div class="inline-block px-4 py-1 rounded-full bg-amber-200 text-amber-900 text-sm font-semibold mb-4">
-          <span data-en="🪔 Serving the Community Since Decades" data-ml="🪔 പതിറ്റാണ്ടുകളായി സമൂഹത്തെ സേവിക്കുന്നു">🪔 Serving the Community Since Decades</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-4 gradient-text" data-en="SNDP Kadakkal Union" data-ml="എസ്.എൻ.ഡി.പി കടക്കൽ യൂണിയൻ">SNDP Kadakkal Union</h2>
-        <p class="text-gray-700 mb-6 text-lg leading-relaxed" data-en="A community of service, education and cultural preservation in Kadakkal. We organise social programs, cultural events and community development projects for the welfare of our members." data-ml="കടക്കലിൽ സേവനം, വിദ്യാഭ്യാസം, സാംസ്കാരിക സംരക്ഷണം എന്നിവയ്ക്കായി പ്രവർത്തിക്കുന്ന ഒരു സമൂഹം. അംഗങ്ങളുടെ ക്ഷേമത്തിനായി സാമൂഹിക പരിപാടികൾ, സാംസ്കാരിക പരിപാടികൾ, സമൂഹ വികസന പദ്ധതികൾ എന്നിവ സംഘടിപ്പിക്കുന്നു.">A community of service, education and cultural preservation in Kadakkal. We organise social programs, cultural events and community development projects for the welfare of our members.</p>
-        <div class="flex gap-3 flex-wrap">
-
-
-<div class="p-6 bg-white rounded-xl border-2 border-amber-400 max-w-md mx-auto shadow-sm hover:shadow-lg transition-all duration-300">
-  <!-- Status Display -->
-  <div id="status" class="text-sm text-amber-800 font-semibold mb-4 flex items-center gap-2">
-    <span id="statusIcon">⏸️</span>   
-    <span id="statusText">Ready to play </span>  <div id="stopIcon" 
-     onclick="stopAudio()" 
-     title="STOP" 
-     class="hidden flex items-center justify-center w-12 h-6 bg-red-600 text-white text-xs font-semibold rounded-md shadow-md hover:bg-red-700 transition cursor-pointer">
-  STOP
-</div>
-
-
-
-  </div>
-
-  <!-- Controls -->
-  <div class="flex items-center gap-3">
-    <button 
-      id="playBtn" 
-      onclick="toggleAudio()" 
-      class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-amber-400 bg-white text-amber-900 font-semibold hover:bg-amber-50 hover:shadow-lg transition-all duration-300">
-      <svg id="playIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-      <span id="btnText">Daivadasakam</span>
-    </button>
-
-  <!--  <button 
-      onclick="stopAudio()" 
-      class="p-3 rounded-xl border-2 border-red-300 bg-red-50 text-red-600 font-semibold hover:bg-red-100 hover:text-red-800 hover:shadow-lg transition-all duration-300">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path fill-rule="evenodd" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
--->
-  </div>
-
-  <audio id="anthemAudio" class="hidden">
-    <source src="daivadasakam.mp3" type="audio/mpeg">
-  </audio>
-</div>
-
-
-<script>
-let isPlaying = false;
-
-function toggleAudio() {
-  const audio = document.getElementById('anthemAudio');
-  const playBtn = document.getElementById('playBtn');
-  const playIcon = document.getElementById('playIcon');
-  const btnText = document.getElementById('btnText');
-  
-  if (isPlaying) {
-    audio.pause();
-  } else {
-    audio.play();
-  }
-}
-
-function stopAudio() {
-  const audio = document.getElementById('anthemAudio');
-  audio.pause();
-  audio.currentTime = 0; // Reset to start
-}
-
-function updateStatus() {
-  const audio = document.getElementById('anthemAudio');
-  const statusIcon = document.getElementById('statusIcon');
-  const statusText = document.getElementById('statusText');
-  const playIcon = document.getElementById('playIcon');
-  const btnText = document.getElementById('btnText');
-  const stopIcon = document.getElementById('stopIcon');
-  
-  if (audio.paused) {
-    isPlaying = false;
-    statusIcon.textContent = '⏸️';
-    statusText.textContent = 'Ready to play';
-    playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
-    btnText.textContent = 'Daivadasakam';
-  } else {
-    isPlaying = true;
-    statusIcon.textContent = '▶️';
-    statusText.textContent = 'Playing';
-    playIcon.innerHTML = '<path fill-rule="evenodd" d="M6 18L18 6M6 6l12 12"/>';
-    btnText.textContent = 'Pause';
-    stopIcon.classList.remove('hidden');
-  }
-}
-
-// Event listeners
-document.getElementById('anthemAudio').addEventListener('play', updateStatus);
-document.getElementById('anthemAudio').addEventListener('pause', updateStatus);
-document.getElementById('anthemAudio').addEventListener('ended', updateStatus);
-</script>
-
-
-
-
-
-
-
-     <!--     <a href="#membership" class="inline-flex items-center px-6 py-3 rounded-xl shadow-lg bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
-            <span data-en="Join as Member" data-ml="അംഗമാകൂ">Join as Member</span>
-          </a>
-      -->
-          <a href="#events" class="inline-flex items-center px-6 py-3 rounded-xl border-2 border-amber-400 bg-white text-amber-900 font-semibold hover:bg-amber-50 hover:shadow-lg transition-all duration-300">
-            <span data-en="Upcoming Events" data-ml="വരാനിരിക്കുന്ന പരിപാടികൾ">Upcoming Events</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="w-full md:w-96 floating">
-        <div class="bg-white rounded-3xl p-5 shadow-2xl border-2 border-amber-200">
-          <h3 class="text-xl font-bold mb-4 text-amber-900" data-en="📢 News & Announcements" data-ml="📢 വാർത്തകളും അറിയിപ്പുകളും">📢 News & Announcements</h3>
-          <div class="relative w-full pt-[56.25%] rounded-2xl overflow-hidden shadow-lg ring-2 ring-amber-300">
-            <iframe 
-              class="absolute top-0 left-0 w-full h-full rounded-2xl"
-              src="https://www.youtube.com/embed/8s0oVPopO6o?autoplay=0&rel=0"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="mt-12 bg-white rounded-3xl p-8 shadow-xl border-2 border-amber-200">
-      <h3 class="text-3xl font-bold mb-6 gradient-text" data-en="About SNDP Kadakkal Union" data-ml="എസ്.എൻ.ഡി.പി കടക്കൽ യൂണിയനെക്കുറിച്ച്">About SNDP Kadakkal Union</h3>
-      <p class="text-gray-700 mb-6 text-lg leading-relaxed" data-en="SNDP Yogam (Sree Narayana Dharma Paripalana Yogam) works for social reform, education and economic upliftment. Kadakkal Union operates at the local level to coordinate activities, support members and preserve cultural practice." data-ml="എസ്.എൻ.ഡി.പി യോഗം (ശ്രീ നാരായണ ധർമ്മ പരിപാലന യോഗം) സാമൂഹിക പരിഷ്കരണം, വിദ്യാഭ്യാസം, സാമ്പത്തിക ഉന്നമനം എന്നിവയ്ക്കായി പ്രവർത്തിക്കുന്നു. കടക്കൽ യൂണിയൻ പ്രാദേശിക തലത്തിൽ പ്രവർത്തനങ്ങൾ ഏകോപിപ്പിക്കുന്നതിനും അംഗങ്ങളെ പിന്തുണയ്ക്കുന്നതിനും സാംസ്കാരിക ആചാരങ്ങൾ സംരക്ഷിക്കുന്നതിനും പ്രവർത്തിക്കുന്നു.">SNDP Yogam (Sree Narayana Dharma Paripalana Yogam) works for social reform, education and economic upliftment. Kadakkal Union operates at the local level to coordinate activities, support members and preserve cultural practice.</p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-6 border-2 border-amber-300 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-yellow-400 flex items-center justify-center mb-4 shadow-lg">
-            <span class="text-2xl">🎯</span>
-          </div>
-          <h4 class="font-bold text-amber-900 text-lg mb-2" data-en="Branches" data-ml="ശാഖകൾ">Branches</h4>
-          <p class="text-sm text-gray-700" data-en="Branches coming under SNDP Kadakkal Union" data-ml="എസ് എൻ ഡി പി കടക്കൽ യൂണിയനു കീഴിൽ വരുന്ന ശാഖകൾ .">Branches coming under SNDP Kadakkal Union.</p>
-        </div>
-        <div class="p-6 border-2 border-amber-300 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-yellow-400 flex items-center justify-center mb-4 shadow-lg">
-            <span class="text-2xl">📚</span>
-          </div>
-          <h4 class="font-bold text-amber-900 text-lg mb-2" data-en="Activities" data-ml="പ്രവർത്തനങ്ങൾ">Activities</h4>
-          <p class="text-sm text-gray-700" data-en="Education drives, health camps, skill workshops and cultural festivals." data-ml="വിദ്യാഭ്യാസ പരിപാടികൾ, ആരോഗ്യ ക്യാമ്പുകൾ, വൈദഗ്ധ്യ പരിശീലനങ്ങൾ, സാംസ്കാരിക ഉത്സവങ്ങൾ.">Education drives, health camps, skill workshops and cultural festivals.</p>
-        </div>
-        <div class="p-6 border-2 border-amber-300 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-yellow-400 flex items-center justify-center mb-4 shadow-lg">
-            <span class="text-2xl">🤝</span>
-          </div>
-          <h4 class="font-bold text-amber-900 text-lg mb-2" data-en="Volunteering" data-ml="സന്നദ്ധസേവനം">Volunteering</h4>
-          <p class="text-sm text-gray-700" data-en="Many programs depend on local volunteers — join and help make an impact." data-ml="പല പരിപാടികളും പ്രാദേശിക സന്നദ്ധപ്രവർത്തകരെ ആശ്രയിച്ചിരിക്കുന്നു - ചേരുകയും സ്വാധീനം ചെലുത്താൻ സഹായിക്കുകയും ചെയ്യുക.">Many programs depend on local volunteers — join and help make an impact.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Events -->
-    <section id="events" class="mt-10">
-      <h3 class="text-3xl font-bold mb-6 gradient-text" data-en="Upcoming Events" data-ml="വരാനിരിക്കുന്ന പരിപാടികൾ">Upcoming Events</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <article class="bg-white p-6 rounded-2xl shadow-xl border-2 border-amber-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-start gap-4">
-            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-400 flex flex-col items-center justify-center shadow-lg flex-shrink-0">
-              <span class="text-2xl font-bold text-white">15</span>
-              <span class="text-xs text-amber-900 font-semibold">JAN</span>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4 overflow-x-hidden">
+    
+    <!-- Decorative floating elements -->
+    <div class="decorative-circle w-72 h-72 bg-yellow-300 -top-20 -left-20 float-animation" style="animation-delay: 0s;"></div>
+    <div class="decorative-circle w-96 h-96 bg-pink-300 -bottom-32 -right-32 float-animation" style="animation-delay: 2s;"></div>
+    <div class="decorative-circle w-64 h-64 bg-purple-300 top-1/2 -right-20 float-animation" style="animation-delay: 4s;"></div>
+    
+    <div class="relative z-10 w-full max-w-4xl">
+        <!-- Main Content Container -->
+        <div class="image-container relative backdrop-blur-sm bg-white/90 rounded-3xl shadow-2xl overflow-hidden fade-in-up">
+            
+            <!-- Header with title -->
+            <div class="page-header absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/50 to-transparent p-6">
+                <h1 class="page-title text-3xl md:text-4xl font-display font-bold text-white text-center drop-shadow-lg">
+                    🪔 കടക്കല്‍ തിരുവാതിര
+                </h1>
+                <p class="page-subtitle text-white/90 text-center mt-2 font-light tracking-wide">♫⋆｡♪ ₊˚♬ ﾟ</p>
             </div>
-            <div class="flex-1">
-              <h4 class="font-bold text-lg text-amber-900 mb-2" data-en="Annual Samooham" data-ml="വാർഷിക സമൂഹം">Annual Samooham</h4>
-              <p class="text-sm text-gray-700 mb-2" data-en="Date: Jan 15, 2026" data-ml="തീയതി: 2026 ജനുവരി 15"><span class="font-semibold" data-en="Date:" data-ml="തീയതി:">Date:</span> Jan 15, 2026</p>
-              <p class="text-sm text-gray-700 mb-2" data-en="Venue: Kadakkal Ground" data-ml="സ്ഥലം: കടക്കൽ മൈതാനം"><span class="font-semibold" data-en="Venue:" data-ml="സ്ഥലം:">Venue:</span> Kadakkal Ground</p>
-              <p class="text-sm text-gray-700" data-en="Activities: Cultural programs, awards, community lunch." data-ml="പ്രവർത്തനങ്ങൾ: സാംസ്കാരിക പരിപാടികൾ, അവാർഡുകൾ, കമ്മ്യൂണിറ്റി ഉച്ചഭക്ഷണം."><span class="font-semibold" data-en="Activities:" data-ml="പ്രവർത്തനങ്ങൾ:">Activities:</span> Cultural programs, awards, community lunch.</p>
+            
+            <!-- Main Image -->
+            <img src="kada.jpg" 
+                 id="mainImage" 
+                 alt="Thiruvatira Celebration" 
+                 class="w-full h-auto object-cover transition-transform duration-700">
+            
+            <!-- Button Container -->
+            <div class="absolute top-32 md:top-32 right-2 md:right-8 z-30 space-y-2 md:space-y-3 fade-in-up delay-300">
+                <div id="buttonContainer"></div>
             </div>
-          </div>
-        </article>
-        <article class="bg-white p-6 rounded-2xl shadow-xl border-2 border-amber-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-start gap-4">
-            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-400 flex flex-col items-center justify-center shadow-lg flex-shrink-0">
-              <span class="text-2xl font-bold text-white">06</span>
-              <span class="text-xs text-amber-900 font-semibold">FEB</span>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-bold text-lg text-amber-900 mb-2" data-en="Skill Development Workshop" data-ml="വൈദഗ്ധ്യ വികസന ശില്പശാല">Skill Development Workshop</h4>
-              <p class="text-sm text-gray-700 mb-2" data-en="Date: Feb 6, 2026" data-ml="തീയതി: 2026 ഫെബ്രുവരി 6"><span class="font-semibold" data-en="Date:" data-ml="തീയതി:">Date:</span> Feb 6, 2026</p>
-              <p class="text-sm text-gray-700" data-en="Topic: Basic computer skills and small-business guidance." data-ml="വിഷയം: അടിസ്ഥാന കമ്പ്യൂട്ടർ വൈദഗ്ധ്യവും ചെറുകിട ബിസിനസ് മാർഗ്ഗനിർദ്ദേശവും."><span class="font-semibold" data-en="Topic:" data-ml="വിഷയം:">Topic:</span> Basic computer skills and small-business guidance.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery" class="mt-10 bg-white p-8 rounded-3xl shadow-xl border-2 border-amber-200">
-      <h3 class="text-3xl font-bold mb-6 gradient-text" data-en="Gallery" data-ml="ഗാലറി">Gallery</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-amber-200">
-          <img src="https://via.placeholder.com/400x300?text=Event+1" alt="Event 1" class="w-full h-48 object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-amber-900/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white font-semibold" data-en="Event 1" data-ml="പരിപാടി 1">Event 1</span>
-          </div>
+            
+            <!-- Decorative bottom gradient -->
+            <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/30 to-transparent"></div>
         </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-amber-200">
-          <img src="https://via.placeholder.com/400x300?text=Event+2" alt="Event 2" class="w-full h-48 object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-amber-900/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white font-semibold" data-en="Event 2" data-ml="പരിപാടി 2">Event 2</span>
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-amber-200">
-          <img src="https://via.placeholder.com/400x300?text=Event+3" alt="Event 3" class="w-full h-48 object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-amber-900/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white font-semibold" data-en="Event 3" data-ml="പരിപാടി 3">Event 3</span>
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-amber-200">
-          <img src="https://via.placeholder.com/400x300?text=Event+4" alt="Event 4" class="w-full h-48 object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-amber-900/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white font-semibold" data-en="Event 4" data-ml="പരിപാടി 4">Event 4</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Membership -->
-    <section id="membership" class="mt-10 bg-gradient-to-br from-white via-amber-50 to-yellow-50 p-8 rounded-3xl shadow-xl border-2 border-amber-200 hidden">
-      <h3 class="text-3xl font-bold mb-6 gradient-text" data-en="Membership" data-ml="അംഗത്വം">Membership</h3>
-      <div class="grid md:grid-cols-2 gap-8 items-start">
-        <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-amber-200">
-          <h4 class="font-bold text-xl text-amber-900 mb-4" data-en="Why join?" data-ml="എന്തുകൊണ്ട് ചേരണം?">Why join?</h4>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="text-amber-500 text-xl flex-shrink-0">✓</span>
-              <span class="text-gray-700" data-en="Be part of local community programs" data-ml="പ്രാദേശിക കമ്മ്യൂണിറ്റി പരിപാടികളുടെ ഭാഗമാകുക">Be part of local community programs</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-amber-500 text-xl flex-shrink-0">✓</span>
-              <span class="text-gray-700" data-en="Access to educational and health camps" data-ml="വിദ്യാഭ്യാസ, ആരോഗ്യ ക്യാമ്പുകളിലേക്കുള്ള പ്രവേശനം">Access to educational and health camps</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-amber-500 text-xl flex-shrink-0">✓</span>
-              <span class="text-gray-700" data-en="Networking with local volunteers and leaders" data-ml="പ്രാദേശിക സന്നദ്ധപ്രവർത്തകരും നേതാക്കളുമായുള്ള നെറ്റ്‌വർക്കിംഗ്">Networking with local volunteers and leaders</span>
-            </li>
-          </ul>
-        </div>
-
-        <form id="membershipForm" class="bg-white p-6 rounded-2xl shadow-lg border-2 border-amber-200 space-y-4">
-          <div>
-            <label class="text-sm font-semibold text-amber-900" data-en="Full Name" data-ml="പൂർണ്ണ നാമം">Full Name</label>
-            <input required name="name" class="w-full mt-2 px-4 py-3 border-2 border-amber-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all" data-placeholder-en="Your name" data-placeholder-ml="നിങ്ങളുടെ പേര്" placeholder="Your name">
-          </div>
-          <div>
-            <label class="text-sm font-semibold text-amber-900" data-en="Phone" data-ml="ഫോൺ">Phone</label>
-            <input required name="phone" class="w-full mt-2 px-4 py-3 border-2 border-amber-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all" data-placeholder-en="Phone number" data-placeholder-ml="ഫോൺ നമ്പർ" placeholder="Phone number">
-          </div>
-          <div>
-            <label class="text-sm font-semibold text-amber-900" data-en="Email (optional)" data-ml="ഇമെയിൽ (ഓപ്ഷണൽ)">Email (optional)</label>
-            <input name="email" class="w-full mt-2 px-4 py-3 border-2 border-amber-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all" data-placeholder-en="you@example.com" data-placeholder-ml="നിങ്ങൾ@example.com" placeholder="you@example.com">
-          </div>
-          <div>
-            <label class="text-sm font-semibold text-amber-900" data-en="Address" data-ml="വിലാസം">Address</label>
-            <input name="address" class="w-full mt-2 px-4 py-3 border-2 border-amber-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all" data-placeholder-en="Village, Post, Taluk" data-placeholder-ml="ഗ്രാമം, പോസ്റ്റ്, താലൂക്ക്" placeholder="Village, Post, Taluk">
-          </div>
-          <div class="flex gap-3">
-            <button type="submit" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-en="Submit" data-ml="സമർപ്പിക്കുക">Submit</button>
-            <button type="reset" class="px-6 py-3 rounded-xl border-2 border-amber-300 bg-white text-amber-900 font-semibold hover:bg-amber-50 transition-all" data-en="Reset" data-ml="പുനഃസജ്ജമാക്കുക">Reset</button>
-          </div>
-          <p id="formMsg" class="text-sm text-green-600 font-semibold hidden" data-en="Thanks — membership request saved locally (demo)." data-ml="നന്ദി - അംഗത്വ അഭ്യർത്ഥന പ്രാദേശികമായി സംരക്ഷിച്ചു (ഡെമോ).">Thanks — membership request saved locally (demo).</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="mt-10 bg-white p-8 rounded-3xl shadow-xl border-2 border-amber-200">
-      <h3 class="text-3xl font-bold mb-6 gradient-text" data-en="Contact & Office" data-ml="ബന്ധപ്പെടുക & ഓഫീസ്">Contact & Office</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div>
-          <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200 mb-6">
-            <p class="text-gray-700 leading-relaxed">
-              <span class="font-semibold text-amber-900" data-en="Office:" data-ml="ഓഫീസ്:">Office:</span> <span data-en="Kadakkal Union Office" data-ml="കടക്കൽ യൂണിയൻ ഓഫീസ്">Kadakkal Union Office</span><br/>
-              <span class="font-semibold text-amber-900" data-en="President:" data-ml="പ്രസിഡന്റ്:">President:</span> ---<br/>
-              <span class="font-semibold text-amber-900" data-en="Secretary:" data-ml="സെക്രട്ടറി:">Secretary:</span> ---
+        
+        <!-- Footer text -->
+        <div class="text-center mt-8 fade-in-up delay-400">
+            <p class="text-white/80 text-sm font-light tracking-wide">
+                Experience the beauty of tradition and celebration
             </p>
-          </div>
-          <p class="text-gray-700 mb-6" data-en="For enquiries or to volunteer, write to us or call." data-ml="അന്വേഷണങ്ങൾക്കോ ​​സന്നദ്ധസേവനത്തിനോ ഞങ്ങൾക്ക് എഴുതുകയോ വിളിക്കുകയോ ചെയ്യുക.">For enquiries or to volunteer, write to us or call.</p>
-
-          <div class="flex gap-3 flex-wrap">
-            <a href="#" class="px-5 py-3 rounded-xl border-2 border-amber-300 text-amber-900 font-semibold hover:bg-amber-50 hover:shadow-lg transition-all duration-300">Facebook</a>
-            <a href="#" class="px-5 py-3 rounded-xl border-2 border-amber-300 text-amber-900 font-semibold hover:bg-amber-50 hover:shadow-lg transition-all duration-300">Instagram</a>
-            <a href="#" class="px-5 py-3 rounded-xl border-2 border-amber-300 text-amber-900 font-semibold hover:bg-amber-50 hover:shadow-lg transition-all duration-300" data-en="Phone" data-ml="ഫോൺ">Phone</a>
-          </div>
         </div>
-
-        <div>
-          <form id="contactForm" class="space-y-4">
-            <input required name="name" class="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all" data-placeholder-en="Your name" data-placeholder-ml="നിങ്ങളുടെ പേര്" placeholder="Your name">
-            <input required name="email" class="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all" data-placeholder-en="Email" data-placeholder-ml="ഇമെയിൽ" placeholder="Email">
-            <textarea required name="message" class="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all" rows="4" data-placeholder-en="Message" data-placeholder-ml="സന്ദേശം" placeholder="Message"></textarea>
-            <div class="flex gap-3">
-              <button type="submit" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-en="Send" data-ml="അയയ്ക്കുക">Send</button>
-              <button type="reset" class="px-6 py-3 rounded-xl border-2 border-amber-300 bg-white text-amber-900 font-semibold hover:bg-amber-50 transition-all" data-en="Reset" data-ml="പുനഃസജ്ജമാക്കുക">Reset</button>
-            </div>
-            <p id="contactMsg" class="text-sm text-green-600 font-semibold hidden" data-en="Message saved locally (demo)." data-ml="സന്ദേശം പ്രാദേശികമായി സംരക്ഷിച്ചു (ഡെമോ).">Message saved locally (demo).</p>
-          </form>
-        </div>
-      </div>
-
-      <div class="mt-8">
-        <iframe title="Kadakkal map" src="https://maps.google.com/maps?q=Kadakkal%20kerala&t=&z=13&ie=UTF8&iwloc=&output=embed" class="w-full h-64 rounded-2xl border-2 border-amber-200 shadow-lg" aria-hidden="false"></iframe>
-      </div>
-    </section>
-
-
-
-
-
-
-
-  </main>
-
-  <footer class="mt-12 bg-gradient-to-r from-amber-100 via-yellow-100 to-orange-100 border-t-2 border-amber-300">
-    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-amber-900 font-semibold">© SNDP Kadakkal Union — <span id="year"></span></p>
-      <p class="text-sm text-amber-800" data-en="Designed for community use." data-ml="കമ്മ്യൂണിറ്റി ഉപയോഗത്തിനായി രൂപകൽപ്പന ചെയ്തിരിക്കുന്നു.">Designed for community use.</p>
     </div>
-  </footer>
 
-  <script>
-    // Language Toggle
-    let currentLang = 'en';
-    const langBtn = document.getElementById('langToggle');
-    
-    function switchLanguage() {
-      currentLang = currentLang === 'en' ? 'ml' : 'en';
-      document.body.setAttribute('lang', currentLang);
-      
-      // Update all translatable elements
-      document.querySelectorAll('[data-en]').forEach(el => {
-        const text = el.getAttribute(`data-${currentLang}`);
-        if (text) {
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.placeholder = text;
-          } else {
-            el.textContent = text;
-          }
+    <!-- Utsav Notice Button - Floating at bottom -->
+    <button onclick="openEbook()" 
+            class="utsav-notice-btn px-6 md:px-8 py-3 md:py-4 text-white font-bold rounded-2xl shadow-2xl transition-all duration-300 flex items-center gap-2 md:gap-3 hover:scale-105 border-2 border-white/30">
+        <span class="emoji text-xl md:text-2xl">📖</span>
+        <span class="text-base md:text-lg">Utsav Notice</span>
+        <span class="emoji text-xl md:text-2xl">🪔</span>
+    </button>
+
+    <!-- Fullscreen Overlay -->
+    <div id="overlay" 
+         class="fixed inset-0 bg-black/95 backdrop-blur-md hidden items-center justify-center z-50 flex-col p-2 md:p-4">
+        <img id="largeImage" 
+             src="" 
+             alt="Large View" 
+             class="max-w-full max-h-[80vh] md:max-h-[85vh] object-contain rounded-lg shadow-2xl">
+        <button onclick="closeOverlay()" 
+                class="mt-4 md:mt-6 px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm md:text-base">
+            ✕ Close
+        </button>
+    </div>
+
+    <!-- Ebook Modal Overlay -->
+    <div id="ebookModal" 
+         class="fixed inset-0 bg-black/95 backdrop-blur-md hidden items-center justify-center z-50 p-2 md:p-4 ebook-modal">
+        <div class="ebook-modal-container w-full max-w-6xl h-[95vh] md:h-[90vh] flex flex-col">
+            <div class="ebook-header flex justify-between items-center mb-3 md:mb-4 px-2">
+                <h2 class="ebook-title text-white text-xl md:text-2xl font-display font-bold flex items-center gap-2 md:gap-3">
+                    <span>📖</span>
+                    <span>Utsav Notice</span>
+                    <span>🪔</span>
+                </h2>
+                <button onclick="closeEbook()" 
+                        class="px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 text-sm md:text-base">
+                    <span>✕</span>
+                    <span class="hidden sm:inline">Close</span>
+                </button>
+            </div>
+            <iframe 
+                allowfullscreen="allowfullscreen" 
+                allow="clipboard-write" 
+                scrolling="no" 
+                class="ebook-iframe w-full flex-1 bg-white" 
+                src="https://heyzine.com/flip-book/608b83a0a3.html">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Array of 15 custom tooltip messages
+        const tooltipMessages = [
+            "പള്ളിയറ നവീകരണം",
+            "Explore our traditions",
+            "Join the celebration",
+            "Learn about rituals",
+            "Experience the music",
+            "View dance performances",
+            "Discover our heritage",
+            "Special ceremonies",
+            "Festival highlights",
+            "Meet the community",
+            "Traditional attire",
+            "Festival foods",
+            "Historical significance",
+            "Photo gallery",
+            "Event schedule"
+        ];
+        
+        const buttonContainer = document.getElementById('buttonContainer');
+        
+       // for (let i = 21; i <= 35; i++) {
+   for (let j = 21; j <= 35; j++) { if(j>28) i=j-28; else i=j;
+            const messageIndex = i - 2;
+            const message = tooltipMessages[messageIndex] || `Custom message ${i}`;
+            
+            // Check if this is button 8 (special styling)
+            const isSpecial = (i === 27);
+            const smallBtnClass = isSpecial ? 'small-btn-special' : 'bg-gradient-to-br from-indigo-600 to-indigo-800';
+            const imageBtnClass = isSpecial ? 'btn-special' : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800';
+            
+            const buttonGroup = document.createElement('div');
+            buttonGroup.className = 'flex items-center gap-1.5 md:gap-2 fade-in-up';
+            buttonGroup.style.animationDelay = `${300 + (i * 50)}ms`;
+            
+            buttonGroup.innerHTML = `
+                <div class="tooltip-container relative">
+                    <a href="page${i}.html">
+                        <button class="small-button-mobile w-5 h-5 md:w-6 md:h-6 ${smallBtnClass} rounded-full shadow-lg small-btn-pulse transition-all duration-300 hover:scale-110 border-2 border-white/30">
+                        </button>
+                    </a>
+                    <div class="tooltip-text tooltip-beautiful">
+                        ${message}
+                        <div class="tooltip-arrow"></div>
+                    </div>
+                </div>
+                <div class="tooltip-container relative">
+                    <button onclick="showImage('${i}b.jpg')" 
+                            class="image-button-mobile btn-hover relative px-3 md:px-4 py-1.5 md:py-2 ${imageBtnClass} text-white font-semibold rounded-xl shadow-lg transition-all duration-300 text-xs md:text-sm min-w-[2.5rem] md:min-w-[3rem] border border-white/20">
+                        ${i}
+                    </button>
+                    <div class="tooltip-text tooltip-beautiful">
+                        ${message}
+                        <div class="tooltip-arrow"></div>
+                    </div>
+                </div>
+            `;
+            
+            buttonContainer.appendChild(buttonGroup);
         }
-      });
-      
-      // Update placeholders
-      document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-        const text = el.getAttribute(`data-placeholder-${currentLang}`);
-        if (text) el.placeholder = text;
-      });
-      
-      // Update language toggle button
-      langBtn.innerHTML = currentLang === 'en' 
-        ? '<span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>മലയാളം</span>'
-        : '<span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>English</span>';
-    }
-    
-    langBtn?.addEventListener('click', switchLanguage);
-
-    // Mobile menu toggle
-    document.getElementById('menuBtn')?.addEventListener('click', ()=>{
-      const m = document.getElementById('mobileMenu');
-      if(!m) return; m.classList.toggle('hidden');
-    });
-
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Membership form submission (demo - stores in memory)
-    let membershipData = [];
-    document.getElementById('membershipForm')?.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const fd = new FormData(e.target);
-      const obj = Object.fromEntries(fd.entries());
-      membershipData.push(obj);
-      console.log('Membership data:', membershipData);
-      document.getElementById('formMsg').classList.remove('hidden');
-      setTimeout(()=>document.getElementById('formMsg').classList.add('hidden'), 4000);
-      e.target.reset();
-    });
-
-    // Contact form submission (demo - stores in memory)
-    let contactMessages = [];
-    document.getElementById('contactForm')?.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const fd = new FormData(e.target);
-      const obj = Object.fromEntries(fd.entries());
-      contactMessages.push(obj);
-      console.log('Contact messages:', contactMessages);
-      document.getElementById('contactMsg').classList.remove('hidden');
-      setTimeout(()=>document.getElementById('contactMsg').classList.add('hidden'), 4000);
-      e.target.reset();
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Close mobile menu if open
-          const mobileMenu = document.getElementById('mobileMenu');
-          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-          }
+        
+        function showImage(imageSrc) {
+            const overlay = document.getElementById("overlay");
+            const largeImage = document.getElementById("largeImage");
+            
+            largeImage.src = imageSrc;
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex', 'overlay-enter');
+            largeImage.classList.add('image-zoom-in');
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
         }
-      });
-    });
-  </script>
+        
+        function closeOverlay() {
+            const overlay = document.getElementById("overlay");
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+        
+        function openEbook() {
+            const ebookModal = document.getElementById("ebookModal");
+            ebookModal.classList.remove('hidden');
+            ebookModal.classList.add('flex');
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeEbook() {
+            const ebookModal = document.getElementById("ebookModal");
+            ebookModal.classList.add('hidden');
+            ebookModal.classList.remove('flex');
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close overlay on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeOverlay();
+                closeEbook();
+            }
+        });
+        
+        // Close overlay on background click
+        document.getElementById('overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeOverlay();
+            }
+        });
+        
+        // Close ebook modal on background click
+        document.getElementById('ebookModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEbook();
+            }
+        });
+    </script>
 </body>
 </html>
