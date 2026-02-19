@@ -475,8 +475,8 @@
                  class="w-full h-auto object-cover transition-transform duration-700">
 
 
-            
-<div class="absolute top-5 md:top-32 right-2 md:right-8 z-30 space-y-2 md:space-y-3 fade-in-up delay-300">
+      <!-- Side Button Panel -->            
+<div class="absolute top-5 md:top-32 right-2 md:right-8 z-30 space-y-2 md:space-y-3 fade-in-up delay-300 hidden">
     <div id="buttonContainer"></div>
 </div>
 
@@ -488,10 +488,10 @@
     </div>
 
     <!-- Utsav Notice Button - Floating at bottom -->
-    <button onclick="openEbook()" 
+    <button onclick="openEbook()" id="utsavBtn"
             class="utsav-notice-btn px-6 md:px-8 py-3 md:py-4 text-white font-bold rounded-2xl shadow-2xl transition-all duration-300 flex items-center gap-2 md:gap-3 hover:scale-105 border-2 border-white/30">
         <span class="emoji text-xl md:text-2xl">📖</span>
-        <span class="text-base md:text-lg">Utsav Notice</span>
+        <span class="text-base md:text-base">ഉത്സവനോട്ടീസ്</span>
         <span class="emoji text-xl md:text-2xl">🪔</span>
     </button>
 
@@ -515,7 +515,7 @@
             <div class="ebook-header flex justify-between items-center mb-3 md:mb-4 px-2">
                 <h2 class="ebook-title text-white text-xl md:text-2xl font-display font-bold flex items-center gap-2 md:gap-3">
                     <span>📖</span>
-                    <span>Utsav Notice</span>
+                    <span>ഉത്സവനോട്ടീസ്</span>
                     <span>🪔</span>
                 </h2>
                 <button onclick="closeEbook()" 
@@ -617,23 +617,70 @@
             // Restore body scroll
             document.body.style.overflow = 'auto';
         }
-        
+     /*   
         function openEbook() {
             const ebookModal = document.getElementById("ebookModal");
+            const utsavButton = document.getElementById("utsavBtn");
             ebookModal.classList.remove('hidden');
             ebookModal.classList.add('flex');
             
             // Prevent body scroll
             document.body.style.overflow = 'hidden';
+            utsavButton.classList.add('hidden');
         }
-        
+        */
+
+function openEbook() {
+    const ebookModal = document.getElementById("ebookModal");
+    const utsavButton = document.getElementById("utsavBtn");
+
+    // Create message container
+    const messageBox = document.createElement("div");
+    messageBox.id = "ebookHint";
+    messageBox.className = "fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50";
+
+    messageBox.innerHTML = `
+        <div class="bg-white p-6 rounded-xl shadow-xl text-center max-w-sm w-full relative">
+            <button id="closeHint" 
+                class="absolute top-2 right-3 text-gray-600 hover:text-red-600 text-lg font-bold">
+                ✖
+            </button>
+            <p class="text-lg font-semibold text-gray-800">
+                പുസ്തകം പോലെ വിരല്‍ കൊണ്ട് പേജുകള്‍ മറിച്ചുനോക്കുക
+            </p>
+        </div>
+    `;
+
+    document.body.appendChild(messageBox);
+
+    // Function to remove message and open ebook
+    function showEbook() {
+        if (document.getElementById("ebookHint")) {
+            document.getElementById("ebookHint").remove();
+        }
+
+        ebookModal.classList.remove('hidden');
+        ebookModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        utsavButton.classList.add('hidden');
+    }
+
+    // Close button click
+    document.getElementById("closeHint").addEventListener("click", showEbook);
+
+    // Auto hide after 3 seconds
+    setTimeout(showEbook, 3000);
+}
+
         function closeEbook() {
             const ebookModal = document.getElementById("ebookModal");
+            const utsavButton = document.getElementById("utsavBtn");
             ebookModal.classList.add('hidden');
             ebookModal.classList.remove('flex');
             
             // Restore body scroll
             document.body.style.overflow = 'auto';
+           utsavButton.classList.remove('hidden');
         }
         
         // Close overlay on ESC key
@@ -661,7 +708,6 @@
 </body>
 
 </html>
-
 
 
 
