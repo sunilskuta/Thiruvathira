@@ -347,23 +347,9 @@
 
     <script>
 
-function showComingSoon() {
 
-    // Create alert box
-    const alertBox = document.createElement("div");
-    alertBox.className = "fixed top-6 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-3 rounded-lg shadow-lg z-50 text-sm font-semibold";
-    alertBox.textContent = "Coming Soon";
-
-    document.body.appendChild(alertBox);
-
-    // Auto remove after 2 seconds
-    setTimeout(() => {
-        alertBox.remove();
-    }, 2000);
-}
-
-function playShortPopup() {
-    const shortsUrl = "https://www.youtube.com/shorts/062pi9n4BDs";
+function playShortPopup(shortsUrl) {
+  //  const  = "https://www.youtube.com/shorts/062pi9n4BDs";
     
     // Fix: handle both shorts and regular URLs
     let videoId;
@@ -483,7 +469,7 @@ for (let j = 27; j <= 27; j++) {
             buttonGroup.innerHTML = `
                 <div class="tooltip-container relative">
                    <a href="javascript:void(0);" 
-   onclick="showComingSoon()">
+   onclick='playShortPopup("https://www.youtube.com/shorts/062pi9n4BDs")'>
                         <button class="w-5 h-5 md:w-6 md:h-6 ${smallBtnClass} rounded-full shadow-lg transition-all duration-300 hover:scale-110 border-2 border-white/30">
                         </button>
                     </a>
@@ -493,7 +479,7 @@ for (let j = 27; j <= 27; j++) {
                     </div>
                 </div>
                 <div class="tooltip-container relative">
-                    <button onclick="playShortPopup()"
+                    <button onclick='playShortPopup("https://www.youtube.com/shorts/HesW8wPtHgg")'
                             class="btn-hover relative px-3 md:px-4 py-1.5 md:py-2 ${imageBtnClass} text-white font-semibold rounded-xl shadow-lg transition-all duration-300 text-xs md:text-sm min-w-[2.5rem] md:min-w-[3rem] border border-white/20">
                         ${i}
                     </button>
